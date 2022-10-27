@@ -18,13 +18,16 @@ class MY_Controller extends CI_Controller
         // Load models
         $this->load->model('Common');
 
+        // Load helper
+        $this->load->helper('ip_helper');
+
         // Login check
         $exception_uris = array(
             'Auth/login',
         );
         if(in_array(uri_string(), $exception_uris) == FALSE) {
             if($this->session->userdata('loggedIn') != true) {
-                //redirect('Auth/login', 'refresh');
+                redirect('Auth/login', 'refresh');
             }
         }
     }

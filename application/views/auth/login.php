@@ -181,6 +181,8 @@ body {
 
 <title>Login</title>
 
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <div class="container">
   <div class="screen">
@@ -189,11 +191,11 @@ body {
       <form class="login" method="post">
         <div class="login__field">
           <i class="login__icon fas fa-user"></i>
-          <input type="text" class="login__input" placeholder="User name / Email">
+          <input type="text" name="username" required class="login__input" placeholder="User name / Email">
         </div>
         <div class="login__field">
           <i class="login__icon fas fa-lock"></i>
-          <input type="password" class="login__input" placeholder="Password">
+          <input type="password" name="password" required="" class="login__input" placeholder="Password">
         </div>
         <input type="submit" name="submit" class="button login__submit" value="Login">
         <!-- <button class="button login__submit" type="submit">
@@ -211,3 +213,18 @@ body {
     </div>
   </div>
 </div>
+
+<script>
+
+  var errorCheck = "<?php echo $errors; ?>";
+  //console.log(errorCheck);
+  if(errorCheck == 1){
+
+      Swal.fire({
+        title: 'Oops...',
+        text: 'Sorry, Username/Password is not matched!',
+        icon: 'error',
+        confirmButtonText: 'Try again'
+      })
+  }
+</script>

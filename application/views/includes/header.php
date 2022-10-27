@@ -14,6 +14,9 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.12.1/r-2.3.0/datatables.min.css"/>
   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.12.1/r-2.3.0/datatables.min.js"></script>
 
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   </head>
 
   <script type="text/javascript">
@@ -34,7 +37,7 @@
     </a>
 
       <span class="float-right">
-        <a href="" class="btn btn-success"> Logout</a>
+        <a href="<?php echo base_url() ?>Auth/logout" class="btn btn-success"> Logout</a>
       </span>
 
       </div>
