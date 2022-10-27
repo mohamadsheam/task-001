@@ -29,7 +29,7 @@
 
 
    <!-- Navbar -->
-  <nav class="navbar fixed-top bg-light">
+  <nav class="navbar fixed-top" style="background-color: #e3f2fd;">
     <div class="container-fluid">
 
     <a href="#">
@@ -45,3 +45,7 @@
   <!-- /.navbar -->
 
 <body>
+
+<script type="text/javascript">
+  var BASE_URL = "<?php  echo base_url(); ?>";
+</script>
