@@ -1,6 +1,6 @@
-###################
-Task Assestment
-###################
+
+# Task Assestment
+
 
 *******************
 Task 1
@@ -69,6 +69,13 @@ Project Setup & Logging
 3. Import DB file from assignment/db directory.
 4. & browse [project url](http://localhost/assignment) from any browser.
 5. Username & password: demo_123
+
+*******************
+Live Preview
+*******************
+[Click Here](https://task-bdgrowtech.herokuapp.com)
+
+- Host Platform: heroku
 
 *******************
 API Documentation
