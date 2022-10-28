@@ -44,12 +44,13 @@ class Auth extends MY_Controller {
 		           $this->data['errors']= 1;
 		        }else{
 		        	// success
-		        	$status = $this->save_activity($result);
+		        	$login_period = $this->save_activity($result);
 
-		        	if($status){ // enable session
+		        	if($login_period){ // enable session
 		        		$data = array(
     		                'loggedIn'  => true,
     		                'user_id'   => $result[0]->id,
+                            'login_period' => $login_period
     		            );
 
     		            $this->session->set_userdata($data);
@@ -72,6 +73,8 @@ class Auth extends MY_Controller {
 	 */
 	private function save_activity($user_info){
 		// save data to database table
+        $login_period = date('Y-m-d H:i:s');
+
 		$ip = get_client_ip();
         $os = getOS();
         $browser = getBrowser();
@@ -84,12 +87,12 @@ class Auth extends MY_Controller {
             'os'         => $os,
             'ip'         => $ip,
             'device'     => $device,
-            'login_time' => date('Y-m-d H:i:s'),
+            'login_time' => $login_period,
         );
 
-		$status = $this->db->insert('access_info', $data);
+		$this->db->insert('access_info', $data);
 
-		return $status;
+		return $login_period;
 
 	}
 
@@ -102,6 +105,7 @@ class Auth extends MY_Controller {
 
 		$where = array(
             'user_id'    => $this->session->userdata('user_id'),
+            'login_time' => $this->session->userdata('login_period')
         );
 
         $this->db->set(array('logout_time' => date('Y-m-d H:i:s ')));
