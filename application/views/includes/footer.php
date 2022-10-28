@@ -31,7 +31,8 @@
 
         columns: [
         {
-            "data": "sn"
+            "data": "sn",
+            'orderable': false
         },
         {
             "data": "name"

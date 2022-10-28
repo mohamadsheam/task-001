@@ -33,7 +33,7 @@ class Common extends CI_Model {
     {
         $this->db->from('currency_informations');
 
-        $columns = ['name', 'num_code', 'char_code', 'nominal', 'value'];
+        $columns = ['id','name', 'num_code', 'char_code', 'nominal', 'value'];
         if($postData['search']['value']){
             $like_ar = [];
 

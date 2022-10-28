@@ -18,7 +18,9 @@ function reloadDataFn(){
         title: 'Data updated',
         showConfirmButton: false,
         timer: 1500
-      })
+      });
+
+      setTimeout("window.location.reload()",1600);
 
     },
     complete:function(data){
