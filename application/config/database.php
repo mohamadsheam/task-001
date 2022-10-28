@@ -80,6 +80,15 @@ $db['default'] = array(
 	'password' => '',
 	'database' => 'assignment',
 	'dbdriver' => 'mysqli',
+
+	// freesqldatabase.com
+	'hostname' => 'sql12.freesqldatabase.com',
+	'username' => 'sql12529832',
+	'password' => 'uMsDw6fpUi',
+	'database' => 'sql12529832',
+	'dbdriver' => 'mysqli',
+
+
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
