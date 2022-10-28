@@ -1,71 +1,78 @@
 ###################
-What is CodeIgniter
+Task Assestment
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
-
 *******************
-Release Information
+Task 1
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+Database assignment.
+---------
+First you need to create database using Mysql
+Here , you have to  create three tables.
+
+First table ====> users
+(id[auto-increment], username, password, created_at, modified_at, last_login, last_ip)
+
+Second table ===> currency_informations
+(id, name, num_code, char_code, nominal, value)
+
+Third table ===> log_table
+(id[auto inc], request_ip, created_at, status, comments)
+
+Table , field and database should be
+Character set: utf8
+Collation: utf8_general_ci
+
+PHP assignment.
+--------
+You have to collect data from an open source URL (XML format) then that data should be stored in the database and finally you have to show that data with pagination.
+
+XML url===> https://www.cbr.ru/scripts/XML_daily.asp?date_req=02/09/2002
+
+Follow:
+- Store the data in the "currency_information" table which will get from XML url.
+(Do not do that manually you have to do that programmatically because If you click on the update button, all the data should be updated).
+
+- Show data with all fields of the "currency_information" table with pagination.
+
+- You have to insert a single user information in the User table whose password must be encrypted. (you can do it statically or programmatically)
+
+
+*******************
+Task 2
+*******************
+You need to implement a REST API. Where given the currency code will return a single currency information. You will get the information about that currency in the "currency_information" table which you already created.
+It must use the GET method and static authentication key.
+When Clients use your REST API method then they have to use authentication key and Currency code.
+
+All requests from the client for REST API  should be stored in the "log_table" table.
+
+
+*******************
+Project Information
+*******************
+
+| Language & Tools  | Description          |
+| ------------------| ---------------------|
+| PHP version       | 7.4                  |
+| Framework         | Codeigniter 3        |
+| Database          | MySQL                |
+| Frontend          | HTML,Bootstrap,JQuery|
+
 
 **************************
-Changelog and New Features
+Project Setup & Logging
 **************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+1. Download the project as ZIP or clone the repo to XAMPP/htdocs directory and name directory as assignment.
+2. Create database as assignment.
+3. Import DB file from assignment/db directory.
+4. & browse [project url](http://localhost/assignment) from any browser.
+5. Username & password: demo_123
 
 *******************
-Server Requirements
+API Documentation
 *******************
 
-PHP version 5.6 or newer is recommended.
+[Please visit this link](https://documenter.getpostman.com/view/10912457/2s8YK7pQtr)
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
