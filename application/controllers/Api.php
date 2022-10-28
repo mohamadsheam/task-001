@@ -17,10 +17,15 @@ class Api extends REST_Controller {
         // set staic_auth_key
         $this->_staic_auth_key = 'mohammadsheam@bdgrowtech.com';
 
+
     }
+
+    // for handling unkownmethod call
+    public function __call($name, $arguments){}
 
 
     public function fetchCurrencyInfo_get(){
+
         $currency_code = null;
         $auth_key = null;
 
